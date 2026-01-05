@@ -24,7 +24,9 @@
 
     "paths": {
       "app/*": ["app/*"],
-      "styles/*": ["styles/*"]
+      "pages/*": ["pages/*"],
+      "styles/*": ["styles/*"],
+      "widgets/*": ["widgets/*"]
     }
   },
   "include": ["src", "vite.config.ts", "eslint.config.js"],
