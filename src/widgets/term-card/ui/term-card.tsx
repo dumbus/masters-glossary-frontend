@@ -15,3 +15,4 @@ export const TermCard: React.FC<TermCardProps> = ({ term }) => {
     </div>
   );
 };
+
