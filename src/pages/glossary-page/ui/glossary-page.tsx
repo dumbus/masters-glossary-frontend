@@ -1,19 +1,17 @@
 import React from 'react';
 
-// TODO: Временно на время разработки, в будущем будет использоваться API
-import termsData from 'data/terms.json';
-import { Term } from 'types/termTypes';
+import { useTerms } from 'contexts/terms-context';
 import { TermCard } from 'widgets/term-card';
 
 import styles from './glossary-page.module.scss';
 
 export const GlossaryPage: React.FC = () => {
-  const data = termsData as Term[];
+  const { terms } = useTerms();
 
   return (
     <div className={styles.container}>
       <div className={styles.grid}>
-        {data.map((term) => (
+        {terms.map((term) => (
           <TermCard key={term.id} term={term} />
         ))}
       </div>

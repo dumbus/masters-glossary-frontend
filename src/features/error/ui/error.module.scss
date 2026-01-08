@@ -1,0 +1,23 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  gap: 16px;
+}
+
+.title {
+  font-size: 32px;
+  font-weight: 600;
+  color: #202022;
+  margin: 0;
+}
+
+.message {
+  font-size: 16px;
+  color: #3E848C;
+  margin: 0;
+}
+
