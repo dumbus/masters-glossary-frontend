@@ -8,7 +8,6 @@ export default defineConfig({
     alias: {
       app: '/src/app',
       data: '/src/data',
-      hooks: '/src/hooks',
       pages: '/src/pages',
       styles: '/src/styles',
       types: '/src/types',
