@@ -104,22 +104,13 @@ export const TermsGraph: React.FC = () => {
         }
       ],
       layout: {
-        name: 'cose',
-        idealEdgeLength: 100,
-        nodeOverlap: 20,
-        refresh: 20,
+        name: 'breadthfirst',
         fit: true,
-        padding: 30,
-        randomize: false,
-        componentSpacing: 100,
-        nodeRepulsion: 400000,
-        edgeElasticity: 100,
-        nestingFactor: 5,
-        gravity: 0.25,
-        numIter: 1000,
-        initialTemp: 200,
-        coolingFactor: 0.95,
-        minTemp: 1.0
+        padding: 50,
+        directed: true,
+        spacingFactor: 1.5,
+        avoidOverlap: true,
+        nodeDimensionsIncludeLabels: true
       }
     });
 
