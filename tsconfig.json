@@ -13,6 +13,7 @@
     "moduleDetection": "force",
     "jsx": "react-jsx",
     "noEmit": true,
+    "resolveJsonModule": true,
 
     "strict": true,
     "noUnusedLocals": true,
@@ -24,8 +25,11 @@
 
     "paths": {
       "app/*": ["app/*"],
+      "data/*": ["data/*"],
+      "hooks/*": ["hooks/*"],
       "pages/*": ["pages/*"],
       "styles/*": ["styles/*"],
+      "types/*": ["types/*"],
       "widgets/*": ["widgets/*"]
     }
   },

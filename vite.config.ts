@@ -7,8 +7,11 @@ export default defineConfig({
   resolve: {
     alias: {
       app: '/src/app',
+      data: '/src/data',
+      hooks: '/src/hooks',
       pages: '/src/pages',
       styles: '/src/styles',
+      types: '/src/types',
       widgets: '/src/widgets'
     }
   }

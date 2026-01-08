@@ -1,65 +1,21 @@
-import React, { useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 
-import cytoscape, { Core } from 'cytoscape';
-// TODO: Временно на время разработки, в будущем будет использоваться API
-import termsData from 'data/terms.json';
-import { Term } from 'types/termTypes';
+import cytoscape, { Core, ElementsDefinition } from 'cytoscape';
 
-import styles from './terms-graph.module.scss';
+interface UseGraphParams {
+  container: HTMLDivElement | null;
+  elements: ElementsDefinition;
+}
 
-export const TermsGraph: React.FC = () => {
-  const containerRef = useRef<HTMLDivElement>(null);
+export const useGraph = ({ container, elements }: UseGraphParams) => {
   const cyRef = useRef<Core | null>(null);
 
   useEffect(() => {
-    if (!containerRef.current) return;
-
-    const data = termsData as Term[];
-
-    const nodes = data.map((term) => ({
-      data: {
-        id: term.id.toString(),
-        label: term.term,
-        source: term.source
-      }
-    }));
-
-    const edges: Array<{
-      data: {
-        id: string;
-        source: string;
-        target: string;
-        label: string;
-      };
-    }> = [];
-
-    const addedPairs = new Set<string>();
-
-    data.forEach((term) => {
-      term.relations.forEach((relation) => {
-        const sourceId = term.id;
-        const targetId = relation.targetId;
-
-        const pairKey = [sourceId, targetId].sort().join('-');
-
-        if (!addedPairs.has(pairKey)) {
-          addedPairs.add(pairKey);
-
-          edges.push({
-            data: {
-              id: `${sourceId}-${targetId}`,
-              source: sourceId.toString(),
-              target: targetId.toString(),
-              label: relation.relationType
-            }
-          });
-        }
-      });
-    });
+    if (!container) return;
 
     cyRef.current = cytoscape({
-      container: containerRef.current,
-      elements: [...nodes, ...edges],
+      container,
+      elements,
       style: [
         {
           selector: 'node',
@@ -129,7 +85,7 @@ export const TermsGraph: React.FC = () => {
         cyRef.current = null;
       }
     };
-  }, []);
+  }, [container, elements]);
 
-  return <div ref={containerRef} className={styles.container} />;
+  return cyRef.current;
 };
