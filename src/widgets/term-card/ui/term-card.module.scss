@@ -1,0 +1,42 @@
+.card {
+  background-color: #3E848C;
+  border: 2px solid #202022;
+  border-radius: 8px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.term {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: #FFFFFF;
+  line-height: 1.4;
+}
+
+.description {
+  margin: 0;
+  font-size: 16px;
+  color: #FFFFFF;
+  line-height: 1.6;
+  flex: 1;
+}
+
+.source {
+  color: #7AB8BF;
+  font-size: 14px;
+  text-decoration: none;
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  display: block;
+
+  &:hover {
+    color: #C4EEF2;
+    text-decoration: underline;
+  }
+}
+
