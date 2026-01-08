@@ -26,8 +26,10 @@
     "paths": {
       "app/*": ["app/*"],
       "assets/*": ["assets/*"],
-      "data/*": ["data/*"],
+      "contexts/*": ["contexts/*"],
+      "features/*": ["features/*"],
       "pages/*": ["pages/*"],
+      "services/*": ["services/*"],
       "styles/*": ["styles/*"],
       "types/*": ["types/*"],
       "widgets/*": ["widgets/*"]

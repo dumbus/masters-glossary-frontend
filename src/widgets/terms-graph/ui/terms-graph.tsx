@@ -1,20 +1,19 @@
 import React, { useEffect, useRef } from 'react';
 
+import { useTerms } from 'contexts/terms-context';
 import cytoscape, { Core } from 'cytoscape';
-// TODO: Временно на время разработки, в будущем будет использоваться API
-import termsData from 'data/terms.json';
-import { Term } from 'types/termTypes';
 
 import styles from './terms-graph.module.scss';
 
 export const TermsGraph: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const cyRef = useRef<Core | null>(null);
+  const { terms } = useTerms();
 
   useEffect(() => {
-    if (!containerRef.current) return;
+    if (!containerRef.current || terms.length === 0) return;
 
-    const data = termsData as Term[];
+    const data = terms;
 
     const nodes = data.map((term) => ({
       data: {
@@ -120,7 +119,7 @@ export const TermsGraph: React.FC = () => {
         cyRef.current = null;
       }
     };
-  }, []);
+  }, [terms]);
 
   return <div ref={containerRef} className={styles.container} />;
 };
