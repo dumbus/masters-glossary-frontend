@@ -23,6 +23,7 @@
   display: flex;
   align-items: center;
   gap: 8px;
+  text-decoration: none;
 
   &:hover {
     background-color: #7AB8BF;
@@ -35,6 +36,15 @@
 
   &:active {
     background-color: #3E848C;
+  }
+
+  &.active {
+    background-color: #3E848C;
+    color: #FFFFFF;
+
+    .icon {
+      filter: brightness(0) invert(1);
+    }
   }
 }
 
