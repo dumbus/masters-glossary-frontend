@@ -42,3 +42,5 @@ echo ""
 echo "Проверка доступности приложения из nginx:"
 curl -s -o /dev/null -w "HTTP Status: %{http_code}\n" http://127.0.0.1:3000 || echo "Ошибка подключения"
 
+
+
