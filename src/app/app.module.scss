@@ -7,5 +7,13 @@
 .content {
   flex: 1;
   padding-top: 64px;
+}
+
+.withScroll {
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.noScroll {
   overflow: hidden;
 }
